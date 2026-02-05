@@ -1,0 +1,40 @@
+.box {
+  width: 20vw;
+  height: 20vw;
+  background-color: cornflowerblue;
+  cursor: pointer;
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  animation: moveBackward 1.5s ease-in 1 forwards;
+}
+
+.navyColor {
+  background-color: navy;
+  animation: moveForward 1.5s ease-in 1 forwards;
+}
+
+@keyframes moveForward {
+  0% {
+    top: 2vw;
+    left: 2vw;
+    border-radius: 0;
+  }
+  100% {
+    top: 30vw;
+    left: 75vw;
+    border-radius: 100%;
+  }
+}
+@keyframes moveBackward {
+  0% {
+    top: 30vw;
+    left: 75vw;
+    border-radius: 100%;
+  }
+  100% {
+    top: 2vw;
+    left: 2vw;
+    border-radius: 0;
+  }
+}

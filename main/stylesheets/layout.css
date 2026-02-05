@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #222;
+  color: #eee;
+}
+section {
+  padding: 8vw 2vw;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22vw 2vw;
+}
+.header h1 {
+  font-family: 'Rubik Beastly', system-ui;
+  text-transform: uppercase;
+  font-size: 10vw;
+}
+.header span:hover {
+  animation: shakeLetter 0.5s infinite;
+  display: inline-block;
+}
+
+.flipCard {
+  width: 23vw;
+  height: 23vw;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.flipCardWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in;
+}
+/* .flipCard:hover .flipCardWrapper {
+  transform: rotateY(-180deg);
+} */
+.flip {
+  transform: rotateY(-180deg);
+}
+.flipCardFront,
+.flipCardBack {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 2vw;
+}
+.flipCardFront {
+  background: radial-gradient(#404040, #2e2e2e);
+  box-shadow: 0 0.5vw 0.6vw 0.6vw #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vw;
+}
+.flipCardBack {
+  transform: rotateY(-180deg);
+}
+.flipCardBack.blue {
+  background: radial-gradient(#62c9e9, #4cc9f0);
+  box-shadow: 0 0.5vw 2vw 0.6vw #4cc9f0;
+}
+.flipCardBack.purple {
+  background: radial-gradient(#f270fe, #f038ff);
+  box-shadow: 0 0.5vw 2vw 0.6vw #f038ff;
+}
+.flipCardBack.green {
+  background: radial-gradient(#c1e08c, #b9e769);
+  box-shadow: 0 0.5vw 2vw 0.6vw #b9e769;
+}
+.flipCardBack.gold {
+  background: radial-gradient(#fefb9e, #e7df69);
+  box-shadow: 0 0.5vw 2vw 0.6vw #e7df69;
+}
+.flipCards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressBarSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressBarButton {
+  width: 8vw;
+  height: 4vw;
+  border-radius: 2vw;
+  border: 0.2vw solid #4cc9f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6vw;
+  color: #4cc9f0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.progressBarButton:hover {
+  color: #eee;
+  background: radial-gradient(#62c9e9, #4cc9f0);
+  box-shadow: 0 0.1vw 1vw 0.3vw #4cc9f0;
+}
+.progressBar {
+  background: radial-gradient(#404040, #2e2e2e);
+  border-radius: 2vw;
+  width: 86vw;
+  height: 4vw;
+  position: relative;
+}
+.progressBarLine {
+  background: radial-gradient(#62c9e9, #4cc9f0);
+  box-shadow: 0 0.1vw 1vw 0.3vw #4cc9f0;
+  height: 100%;
+  border-radius: 2vw;
+  opacity: 0;
+}
+.progressBarNumber {
+  position: absolute;
+  font-size: 1.6vw;
+  top: 1.2vw;
+  right: 2vw;
+}
+
+.drawStar svg {
+  position: fixed;
+  top: 1vw;
+  right: 1vw;
+}
