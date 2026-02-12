@@ -1,6 +1,49 @@
 flipCard()
 moveProgressBar()
 drawSVG()
+showRandomImage()
+showRandomText()
+
+function showRandomText() {
+  let quotes = [
+    'Каждый день — это новый шанс изменить свою жизнь.',
+    'Твоя сила в том, что ты продолжаешь идти вперед.',
+    'Не бойся быть собой — это твоя суперсила.',
+    'Верь в свои мечты, даже если они кажутся далекими.',
+    'Пока не упал духом, любые другие падения по плечу.',
+    'Если до вашей планки не дотягиваются, это не повод ее занижать.',
+    'Мечты так и остаются мечтами, если к ним не идти.',
+    'Разум бессилен перед криком сердца.',
+    'Самый здоровый ответ на жизнь – это радость.',
+    'Вы храбрее, чем думаете, сильнее, чем кажетесь, и умнее, чем считаете.'
+  ]
+  let button = document.querySelector('.randomTextButton')
+  let text = document.querySelector('.randomText')
+
+  let colors = ['blue', 'gold', 'green', 'purple']
+
+  button.addEventListener('click', () => {
+    // формула: Math.random() * (max - min) + min
+    let randomID = Math.floor(Math.random() * (quotes.length - 1) + 1)
+    let randomColor = Math.floor(Math.random() * colors.length)
+
+    text.innerText = quotes[randomID]
+    text.classList.remove(text.classList[1])
+    text.classList.add(`${colors[randomColor]}`)
+  })
+}
+
+function showRandomImage() {
+  let button = document.querySelector('.randomImgButton')
+  let img = document.querySelector('.showRandomImage img')
+
+  button.addEventListener('click', () => {
+    // формула: Math.random() * (max - min) + min
+    let randomNumber = Math.floor(Math.random() * 7 + 1)
+
+    img.src = `images/smeshariki/smesharik${randomNumber}.webp`
+  })
+}
 
 function drawSVG() {
   let star = document.querySelector('.svgLine')

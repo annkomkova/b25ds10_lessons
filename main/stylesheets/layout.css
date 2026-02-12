@@ -133,3 +133,59 @@ section {
   top: 1vw;
   right: 1vw;
 }
+
+.showRandomImage,
+.showRandomText {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
+  background: radial-gradient(#404040, #2e2e2e);
+  box-shadow: 0 0.5vw 0.6vw 0.6vw #1e1e1e;
+  border-radius: 2vw;
+  padding: 2vw;
+}
+.showRandomImage img {
+  width: 100%;
+}
+.randomImgButton,
+.randomTextButton {
+  padding: 1vw 2vw;
+  border: 0.2vw solid #4cc9f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6vw;
+  color: #4cc9f0;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 2vw;
+}
+.randomImgButton:hover,
+.randomTextButton:hover {
+  color: #eee;
+  background: radial-gradient(#62c9e9, #4cc9f0);
+  box-shadow: 0 0.1vw 1vw 0.3vw #4cc9f0;
+}
+.random {
+  display: flex;
+  gap: 2vw;
+}
+.randomText {
+  font-size: 1.6vw;
+  text-transform: uppercase;
+  margin-top: 4vw;
+}
+.blue {
+  color: #4cc9f0;
+}
+.purple {
+  color: #f038ff;
+}
+.green {
+  color: #b9e769;
+}
+.gold {
+  color: #e7df69;
+}
