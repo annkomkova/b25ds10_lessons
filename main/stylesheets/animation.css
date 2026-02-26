@@ -33,3 +33,41 @@
     transform: translate(1px, 2px) rotate(0deg);
   }
 }
+
+@keyframes popupEl {
+  0% {
+    opacity: 0.5;
+    transform: translate(0, 0) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, -6vw);
+  }
+}
+@keyframes cursor {
+  0% {
+    background-color: red;
+  }
+  20% {
+    background-color: gold;
+  }
+  40% {
+    background-color: green;
+  }
+  60% {
+    background-color: navy;
+  }
+  80% {
+    background-color: darkmagenta;
+  }
+  100% {
+    background-color: red;
+  }
+}
