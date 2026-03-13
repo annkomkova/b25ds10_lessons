@@ -6,7 +6,72 @@ showRandomText()
 animationPopup()
 runningButton()
 changeBlick()
-cursor()
+// cursor()
+eyes()
+parallaxCircles()
+animationFramesOnScroll()
+
+function animationFramesOnScroll() {
+  let body = document.querySelector('body')
+  let slider = body.querySelector('.slider')
+  let frames = body.querySelectorAll('.slider img')
+  let totalFrames = frames.length
+
+  window.addEventListener('scroll', () => {
+    let rect = body.getBoundingClientRect()
+    let vh = window.innerHeight
+
+    let progress = (vh - rect.top) / (vh + rect.height)
+    let p = Math.max(0, Math.min(1, progress))
+
+    let frame = Math.floor(p * totalFrames)
+    let percent = -(frame * 100)
+
+    slider.style.marginLeft = `${percent}%`
+  })
+}
+
+function parallaxCircles() {
+  let section = document.querySelector('.parallax')
+  let circles = document.querySelectorAll('.circle')
+
+  window.addEventListener('scroll', () => {
+    let rect = section.getBoundingClientRect()
+    let vh = window.innerHeight
+
+    let progress = (vh - rect.top) / (vh + rect.height)
+    let p = Math.max(0, Math.min(1, progress))
+
+    let moveY = (p - 0.6) * 400
+    let moveX = (p - 0.5) * 100
+    let scale = p * 0.3 + 1
+
+    circles.forEach((circle) => {
+      circle.style.transform = `translate(${-moveX}px, ${-moveY}px) scale(${scale})`
+    })
+  })
+}
+
+function eyes() {
+  let dots = document.querySelectorAll('.dot')
+
+  document.addEventListener('mousemove', (event) => {
+    dots.forEach((dot) => {
+      let rect = dot.getBoundingClientRect()
+
+      let dotX = rect.left + rect.width / 2
+      let dotY = rect.top + rect.height / 2
+
+      let dX = event.pageX - dotX
+      let dY = event.pageY - dotY
+
+      let angle = Math.atan2(dY, dX)
+      let deg = (180 / Math.PI) * angle
+
+      dot.style.transform = `rotate(${deg}deg)`
+    })
+  })
+}
 
 function cursor() {
   let cursor = document.querySelector('.cursor')

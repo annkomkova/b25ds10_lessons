@@ -5,7 +5,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #222;
   color: #eee;
-  cursor: none;
+  /* cursor: none; */
 }
 section {
   padding: 8vw 2vw;
@@ -263,4 +263,120 @@ section {
   top: 2vw;
   left: 2vw;
   font-size: 1.6vw;
+}
+
+.eyesAndParallax {
+  display: flex;
+  justify-content: space-between;
+}
+.eyes,
+.parallax {
+  width: 48%;
+  background: radial-gradient(#404040, #2e2e2e);
+  box-shadow: 0 0.5vw 0.6vw 0.6vw #1e1e1e;
+  border-radius: 2vw;
+  padding: 1.2vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6vw;
+  position: relative;
+  margin-top: 80vh;
+}
+.eye {
+  width: 4vw;
+  height: 4vw;
+  border: 0.4vw solid #777;
+  border-radius: 70% 0 / 70%;
+  transform: rotate(45deg);
+  position: relative;
+}
+.dot {
+  width: 1.3vw;
+  height: 1.3vw;
+  border-radius: 100%;
+  background-color: #777;
+  position: absolute;
+  top: 8%;
+  left: 40%;
+  transform-origin: 50% 125%;
+}
+.circle {
+  border-radius: 100%;
+  position: absolute;
+  background-image: url('https://setka.design/images/web/sphere.png');
+  background-color: #000;
+  background-size: 105%;
+  background-position: center;
+  filter: grayscale(100%);
+}
+.circle:nth-of-type(1) {
+  width: 10vw;
+  height: 10vw;
+  top: 70%;
+  left: 75%;
+}
+.circle:nth-of-type(2) {
+  width: 20vw;
+  height: 20vw;
+  top: 10%;
+  left: 40%;
+}
+.circle:nth-of-type(3) {
+  width: 3vw;
+  height: 3vw;
+  top: 3%;
+  left: 90%;
+}
+.circle:nth-of-type(4) {
+  width: 4vw;
+  height: 4vw;
+  top: 35%;
+  left: 80%;
+}
+.circle:nth-of-type(5) {
+  width: 6vw;
+  height: 6vw;
+  top: 15%;
+  left: 5%;
+}
+.circle:nth-of-type(6) {
+  width: 10vw;
+  height: 10vw;
+  top: 5%;
+  left: 30%;
+}
+.circle:nth-of-type(7) {
+  width: 2vw;
+  height: 2vw;
+  top: 80%;
+  left: 10%;
+}
+.circle:nth-of-type(8) {
+  width: 8vw;
+  height: 8vw;
+  top: 40%;
+  left: 20%;
+}
+
+.sliderContainer {
+  position: sticky;
+  top: 5vw;
+  left: 5vw;
+  width: 10vw;
+  height: 10vw;
+  overflow: hidden;
+  z-index: 3;
+}
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  filter: saturate(0) brightness(1.5);
+}
+.slider img {
+  width: 100%;
+  flex-shrink: 0;
 }
